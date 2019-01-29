@@ -159,4 +159,27 @@ django-admin startproject new_project .
   再见
 
 
+----------------------------------------------------------远程不能访问时-----------------------------------------------
+开开启django时，使用0.0.0.0:xxxx，作为ip和端口例如：
+
+python3 manage.py runserver 0.0.0.0:9000
+
+然后在settings里修改ALLOWED_HOSTS = []，
+
+改为ALLOWED_HOSTS = ['*',]，注意不要漏掉“，”。
+
+其他机器就可以通过这台机器的ip和端口号访问django了。
+
+例如：http://192.168.14.40:9000/index.html
+
+----
+解决方法：启动服务时ip使用0.0.0.0
+ 
+使用gunicorn启动
+gunicorn -w4 -b0.0.0.0:8020 UITestManage.wsgi
+ 
+使用runserver启动
+ python3 manage.py runserver 0.0.0.0:8020
+ 
+ 
 
