@@ -1,0 +1,9 @@
+
+
+django支持mongodb
+
+
+pip3 install -U mongoengine
+
+https://blog.csdn.net/kuangshp128/article/details/79039366
+
